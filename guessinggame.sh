@@ -11,11 +11,18 @@ function guess2 {
   if [[ $guess -eq $num ]]
 	then 
 		echo "you are correct"
-	else
-		echo "you are wrong"
+  elif [[ $guess -lt $num ]]
+	then
+		echo "you are wrong, guess a higher number"
 		echo "please insert a new number"
                 read response
                 guess2 
+  elif [[ $guess -gt $num ]]
+	then
+	echo "you are wrong, guess a smaller number"
+	echo "please insert a new number"
+	read response
+	guess2
 	fi 
 }
 
